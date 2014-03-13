@@ -1,7 +1,6 @@
-Indoor Air Quality Shield
-----
+# Indoor Air Quality Shield
 
-# Specifications:
+### Specifications:
  * Sensors:
  	1. Figaro TGS 2602 VOC Sensor
  	2. MICS-5525 Carbon Monoxide (CO) Sensor
