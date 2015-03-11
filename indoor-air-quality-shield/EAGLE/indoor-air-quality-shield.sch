@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -11173,6 +11173,13 @@ Source: AVX .. aphvc.pdf</description>
 <part name="C3" library="rcl" deviceset="C-EU" device="C0603"/>
 <part name="GND24" library="supply1" deviceset="GND" device=""/>
 <part name="GND25" library="supply1" deviceset="GND" device=""/>
+<part name="C4" library="rcl" deviceset="C-EU" device="C0603"/>
+<part name="C5" library="rcl" deviceset="C-EU" device="C0603"/>
+<part name="GND26" library="supply1" deviceset="GND" device=""/>
+<part name="C6" library="rcl" deviceset="C-EU" device="C0603"/>
+<part name="C7" library="rcl" deviceset="C-EU" device="C0603"/>
+<part name="GND27" library="supply1" deviceset="GND" device=""/>
+<part name="GND28" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11353,6 +11360,13 @@ SOCKETS</text>
 <instance part="C3" gate="G$1" x="16.51" y="151.13" rot="R90"/>
 <instance part="GND24" gate="1" x="12.7" y="148.59"/>
 <instance part="GND25" gate="1" x="115.57" y="26.67"/>
+<instance part="C4" gate="G$1" x="236.22" y="48.26"/>
+<instance part="C5" gate="G$1" x="35.56" y="13.97" rot="R180"/>
+<instance part="GND26" gate="1" x="35.56" y="6.35"/>
+<instance part="C6" gate="G$1" x="29.21" y="170.18" rot="R90"/>
+<instance part="C7" gate="G$1" x="12.7" y="80.01" rot="R180"/>
+<instance part="GND27" gate="1" x="25.4" y="165.1"/>
+<instance part="GND28" gate="1" x="12.7" y="73.66"/>
 </instances>
 <busses>
 </busses>
@@ -11445,6 +11459,9 @@ SOCKETS</text>
 <pinref part="U$5" gate="G$1" pin="GND"/>
 <pinref part="GND22" gate="1" pin="GND"/>
 <wire x1="205.74" y1="43.18" x2="210.82" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="210.82" y1="43.18" x2="236.22" y2="43.18" width="0.1524" layer="91"/>
+<junction x="210.82" y="43.18"/>
 </segment>
 <segment>
 <pinref part="JP3" gate="G$1" pin="GND"/>
@@ -11503,6 +11520,22 @@ SOCKETS</text>
 <pinref part="GND25" gate="1" pin="GND"/>
 <wire x1="115.57" y1="29.21" x2="114.3" y2="29.21" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="C5" gate="G$1" pin="1"/>
+<pinref part="GND26" gate="1" pin="GND"/>
+<wire x1="35.56" y1="8.89" x2="35.56" y2="11.43" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND27" gate="1" pin="GND"/>
+<pinref part="C6" gate="G$1" pin="1"/>
+<wire x1="25.4" y1="167.64" x2="25.4" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="170.18" x2="26.67" y2="170.18" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C7" gate="G$1" pin="1"/>
+<pinref part="GND28" gate="1" pin="GND"/>
+<wire x1="12.7" y1="76.2" x2="12.7" y2="77.47" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -11536,6 +11569,9 @@ SOCKETS</text>
 <pinref part="P+2" gate="1" pin="+5V"/>
 <wire x1="54.61" y1="171.45" x2="54.61" y2="170.18" width="0.1524" layer="91"/>
 <junction x="54.61" y="170.18"/>
+<pinref part="C6" gate="G$1" pin="2"/>
+<wire x1="34.29" y1="170.18" x2="39.37" y2="170.18" width="0.1524" layer="91"/>
+<junction x="39.37" y="170.18"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="A2"/>
@@ -11550,6 +11586,9 @@ SOCKETS</text>
 <pinref part="P+8" gate="1" pin="+5V"/>
 <wire x1="12.7" y1="97.79" x2="12.7" y2="91.44" width="0.1524" layer="91"/>
 <junction x="12.7" y="91.44"/>
+<pinref part="C7" gate="G$1" pin="2"/>
+<wire x1="12.7" y1="85.09" x2="12.7" y2="86.36" width="0.1524" layer="91"/>
+<junction x="12.7" y="86.36"/>
 </segment>
 <segment>
 <pinref part="J2" gate="G$1" pin="3"/>
@@ -11572,12 +11611,17 @@ SOCKETS</text>
 <pinref part="D1" gate="G$1" pin="C"/>
 <wire x1="39.37" y1="34.29" x2="41.91" y2="34.29" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="+"/>
-<wire x1="41.91" y1="19.05" x2="41.91" y2="34.29" width="0.1524" layer="91"/>
+<wire x1="41.91" y1="19.05" x2="41.91" y2="22.86" width="0.1524" layer="91"/>
 <junction x="41.91" y="34.29"/>
+<wire x1="41.91" y1="22.86" x2="41.91" y2="34.29" width="0.1524" layer="91"/>
 <wire x1="41.91" y1="34.29" x2="49.53" y2="34.29" width="0.1524" layer="91"/>
 <pinref part="D3" gate="G$1" pin="C"/>
 <wire x1="39.37" y1="44.45" x2="41.91" y2="44.45" width="0.1524" layer="91"/>
 <wire x1="41.91" y1="44.45" x2="41.91" y2="34.29" width="0.1524" layer="91"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="35.56" y1="19.05" x2="35.56" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="22.86" x2="41.91" y2="22.86" width="0.1524" layer="91"/>
+<junction x="41.91" y="22.86"/>
 </segment>
 <segment>
 <pinref part="J5" gate="G$1" pin="3"/>
@@ -11848,10 +11892,13 @@ SOCKETS</text>
 <wire x1="205.74" y1="50.8" x2="232.41" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="+3V2" gate="G$1" pin="+3V3"/>
 <pinref part="R14" gate="G$1" pin="2"/>
-<wire x1="232.41" y1="50.8" x2="240.03" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="232.41" y1="50.8" x2="236.22" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="50.8" x2="240.03" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="229.87" y1="48.26" x2="232.41" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="232.41" y1="48.26" x2="232.41" y2="50.8" width="0.1524" layer="91"/>
 <junction x="232.41" y="50.8"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<junction x="236.22" y="50.8"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="V+"/>
